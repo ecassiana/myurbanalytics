@@ -1,0 +1,72 @@
+<ion-header>
+    <ion-navbar>
+      <ion-buttons left>
+        <button ion-button icon-only (click)="voltar()">
+          <ion-icon name="arrow-round-back"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-title text-center><ion-icon name="information-circle"></ion-icon></ion-title>
+      <ion-title text-center>Sobre</ion-title>
+     </ion-navbar>  
+  </ion-header>
+
+<ion-content padding>
+  <h1 class="sobre-titulo" text-center>MyUrbAnalytics</h1>
+  <ion-segment [(ngModel)]="sobreInfo">
+    <ion-segment-button value="comoFunciona">
+        <ion-icon name="help-circle"></ion-icon> Como Funciona 
+    </ion-segment-button>
+    <ion-segment-button value="privacidade">
+        <ion-icon name="lock"></ion-icon> Dados Utilizados 
+    </ion-segment-button>
+    <ion-segment-button value="sobre">
+        <ion-icon name="information-circle"></ion-icon> Sobre o MyUrb 
+    </ion-segment-button>
+  </ion-segment>
+
+  <div [ngSwitch]="sobreInfo">
+    <div *ngSwitchCase="'comoFunciona'">
+
+        <ion-card>
+            <ion-card-header text-wrap text-justify>
+                Para utilizar o MyUrbAnalytics basta escolher uma das opções na barra lateral esquerda, aplicar os filtros desejados e clicar no botão "APLICAR FILTROS."
+            </ion-card-header>
+        </ion-card>
+        <ion-card>
+            <ion-card-header text-wrap text-justify>
+                Para retirar todos os filtros utilizados, bastar clicar no botão "LIMPAR FILTROS".
+            </ion-card-header>
+        </ion-card>
+    </div>
+    <div *ngSwitchCase="'privacidade'">
+      <ion-card>
+        <ion-card-header text-wrap text-justify>
+          Ao utilizar a aplicação MyUrb, o usuário pode fornecer informações básicas sobre sua viagem: horário e ponto de ônibus de embarque, horário e ponto de ônibus de desembarque, data da viagem, adversidades encontradas na viagem.
+        </ion-card-header>
+      </ion-card>
+      <ion-card>
+          <ion-card-header text-wrap text-justify>
+              Todas as informações são anônimas, e são utilizadas para calcular as rotas da aplicação. 
+          </ion-card-header>
+        </ion-card>
+        <ion-card>
+            <ion-card-header text-wrap text-justify>
+                As informações também são utilizadas no MyUrbAnalytics, exibindo para o usuário pontos mais usados como origem, destino e a lista de adversidades.
+            </ion-card-header>
+          </ion-card>
+    </div>
+    <div *ngSwitchCase="'sobre'">
+        <ion-card>
+          <ion-card-header text-wrap text-justify> O projeto MyUrb surgiu como resultado de um Trabalho de Conclusão de Curso de Graduação em Engenharia de Computação na Universidade Tecnológica Federal do Paraná (UTFPR) - campus Curitiba. </ion-card-header>
+        </ion-card>
+        
+        <ion-card>
+            <ion-card-header text-wrap text-justify> O MyUrb Analytics é a parte do projeto que permite que os dados obtidos através da aplicação sejam visualizados pelos usuários.</ion-card-header>
+        </ion-card>
+
+        <ion-card>
+          <ion-card-header text-wrap text-justify> O projeto possui código aberto e utiliza dados abertos da cidade de Curitiba para funcionar.</ion-card-header>
+        </ion-card>     
+    </div>
+  </div>
+</ion-content>

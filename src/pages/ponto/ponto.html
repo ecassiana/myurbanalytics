@@ -1,0 +1,181 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title text-center>MyUrbAnalytics</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content>
+  <div class="pontomapMenu card card-1">
+
+    <ion-segment [(ngModel)]="opcaoDado">
+
+      <ion-segment-button value="origem">
+        ORIGEM
+      </ion-segment-button>
+
+      <ion-segment-button value="destino">
+        DESTINO
+      </ion-segment-button>
+
+      <ion-segment-button value="pontos">
+       PONTOS
+      </ion-segment-button>
+
+    </ion-segment>
+
+    <!-- List -->
+    <ion-list>
+
+      <div [ngSwitch]="opcaoDado">
+
+        <!-- Origem -->
+        <div *ngSwitchCase="'origem'">
+
+          <ion-item>
+            <ion-label style="color: black">Tipo de Pontos de Ônibus</ion-label>
+            <ion-select [(ngModel)]="tipoPonto">
+              <ion-option *ngFor="let tipo of listaTiposPontos" [value]="tipo">{{tipo}}</ion-option>
+            </ion-select>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label style="color: black">Bairro</ion-label>
+            <ion-select [(ngModel)]="bairro">
+              <ion-option *ngFor="let bairro of listaBairros" [value]="bairro">{{bairro}}</ion-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-label style="color: black">Data de Início</ion-label>
+            <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="dataInicio"></ion-datetime>
+          </ion-item>
+
+          <ion-item>
+            <ion-label style="color: black">Data de Fim</ion-label>
+            <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="dataFim"></ion-datetime>
+          </ion-item>
+
+          <ion-item>
+            <ion-label range--top>Faixa de Horário</ion-label>
+            <ion-range min="00" max="23" step="1" [(ngModel)]="faixaHorario" pin="true" dualKnobs="true">
+              <ion-label range-left>00</ion-label>
+              <ion-label range-right>23</ion-label>
+            </ion-range>
+          </ion-item>
+
+          <button ion-button full (click)="FiltroOrigem()">
+            Aplicar Filtros
+          </button>
+
+          <button ion-button full (click)="LimparFiltros()">
+              Limpar Filtros
+          </button>
+        </div>
+
+        <!-- Destino -->
+        <div *ngSwitchCase="'destino'">
+          <ion-item>
+            <ion-label style="color: black">Tipo de Pontos de Ônibus</ion-label>
+            <ion-select [(ngModel)]="tipoPonto">
+              <ion-option *ngFor="let tipo of listaTiposPontos" [value]="tipo">{{tipo}}</ion-option>
+            </ion-select>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label style="color: black">Bairro</ion-label>
+            <ion-select [(ngModel)]="bairro">
+              <ion-option *ngFor="let bairro of listaBairros" [value]="bairro">{{bairro}}</ion-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-label style="color: black">Data de Início</ion-label>
+            <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="dataInicio"></ion-datetime>
+          </ion-item>
+
+          <ion-item>
+            <ion-label style="color: black">Data de Fim</ion-label>
+            <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="dataFim"></ion-datetime>
+          </ion-item>
+
+          <ion-item>
+            <ion-label range--top>Faixa de Horário</ion-label>
+            <ion-range min="00" max="23" step="1" [(ngModel)]="faixaHorario" pin="true" dualKnobs="true">
+              <ion-label range-left>00</ion-label>
+              <ion-label range-right>23</ion-label>
+            </ion-range>
+          </ion-item>
+
+          <button ion-button full (click)="FiltroDestino()">
+            Aplicar Filtros
+          </button>
+
+          <button ion-button full (click)="LimparFiltros()">
+              Limpar Filtros
+          </button>
+        </div>
+
+        <!-- Pontos -->
+        <div *ngSwitchCase="'pontos'">
+         <ion-item>
+            <ion-label style="color: black">Tipo de Adversidade</ion-label>
+            <ion-select [(ngModel)]="adversidade">
+              <ion-option *ngFor="let tipo of listaAdversidades" [value]="tipo">{{tipo}}</ion-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+              <ion-label style="color: black">Tipo de Pontos de Ônibus</ion-label>
+              <ion-select [(ngModel)]="tipoPonto">
+                <ion-option *ngFor="let tipo of listaTiposPontos" [value]="tipo">{{tipo}}</ion-option>
+              </ion-select>
+            </ion-item>
+            
+            <ion-item>
+              <ion-label style="color: black">Bairro</ion-label>
+              <ion-select [(ngModel)]="bairro">
+                <ion-option *ngFor="let bairro of listaBairros" [value]="bairro">{{bairro}}</ion-option>
+              </ion-select>
+            </ion-item>
+  
+            <ion-item>
+              <ion-label style="color: black">Data de Início</ion-label>
+              <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="dataInicio"></ion-datetime>
+            </ion-item>
+  
+            <ion-item>
+              <ion-label style="color: black">Data de Fim</ion-label>
+              <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="dataFim"></ion-datetime>
+            </ion-item>
+  
+            <ion-item>
+              <ion-label range--top>Faixa de Horário</ion-label>
+              <ion-range min="00" max="23" step="1" [(ngModel)]="faixaHorario" pin="true" dualKnobs="true">
+                <ion-label range-left>00</ion-label>
+                <ion-label range-right>23</ion-label>
+              </ion-range>
+            </ion-item>
+  
+            <button ion-button full (click)="FiltroPontos()">
+              Aplicar Filtros
+            </button>
+
+            <button ion-button full (click)="LimparFiltros()">
+                Limpar Filtros
+            </button>
+        </div>     
+
+      </div> 
+    </ion-list>
+
+  </div>
+
+  <div id="pontomap">
+    
+  <button ion-button  id="button-help" class="leaflet-control" (click)="BotaoAjuda()">
+      <ion-icon name="help"></ion-icon>
+  </button>
+  
+  </div>
+</ion-content>

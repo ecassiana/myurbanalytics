@@ -1,0 +1,7 @@
+{
+  "name": "MyUrb",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
