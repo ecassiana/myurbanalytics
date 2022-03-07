@@ -2,9 +2,10 @@
 MyUrbAnalytics is an open source project developed with the aim of offering a graphical view of the data obtained through the MyUrb application.
 Its interface (illustrated in the figures below) has some temporal and location filters, allowing the visualization of this data to be more dynamic.
 
-![]()
-![]()
-![]()
+![](https://github.com/ecassiana/myurbanalytics/blob/master/myurbanalytics_prints/tela_inicial.png?raw=true)
+![](https://github.com/ecassiana/myurbanalytics/blob/master/myurbanalytics_prints/tela_origem.png?raw=true)
+![](https://github.com/ecassiana/myurbanalytics/blob/master/myurbanalytics_prints/tela_destino.png?raw=true)
+![](https://github.com/ecassiana/myurbanalytics/blob/master/myurbanalytics_prints/tela_pontos.png?raw=true)
 
 ## Demonstration Video
 YouTube - [Projeto MyUrb](https://youtu.be/VPC1_T9JgcI)
